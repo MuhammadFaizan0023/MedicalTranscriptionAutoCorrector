@@ -3,15 +3,11 @@ import joblib
 import re
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 import torch
-import os
+
 from huggingface_hub import constants
 
 class AutocorrectPipeline:
-    os.environ["HF_HOME"] = "D:/COMSATS/7th Semester/NLP/MedicalTranscription_auto_correction/MTAC_Pipeline/huggingface_cache"
-    os.environ["HF_HUB_CACHE"] = "D:/COMSATS/7th Semester/NLP/MedicalTranscription_auto_correction/MTAC_Pipeline/huggingface_cache"
-    os.makedirs("D:/COMSATS/7th Semester/NLP/MedicalTranscription_auto_correction/MTAC_Pipeline/huggingface_cache", exist_ok=True)
-    os.environ["TRANSFORMERS_CACHE"] = "D:/COMSATS/7th Semester/NLP/MedicalTranscription_auto_correction/MTAC_Pipeline/huggingface_cache"
-    
+   
     print("HF_HUB_CACHE resolved to:", constants.HF_HUB_CACHE)
     def __init__(self, vocab_freq_path="merged_vocab_updated.pkl", max_dictionary_edit_distance=2, prefix_length=7):
 

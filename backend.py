@@ -7,7 +7,7 @@ nltk.download('punkt_tab', quiet=True)
 
 app = Flask(__name__)
 
-# Loads vocab + SymSpell + BERT once at startup (this can take a little while, especially first run)
+# Loads vocab + SymSpell + BERT once at startup 
 print("Initializing pipeline...")
 vocab_set = "./Data Files/merged_vocab_updated.pkl"
 pipeline = AutocorrectPipeline(vocab_freq_path="./Data Files/merged_vocab_updated.pkl")
